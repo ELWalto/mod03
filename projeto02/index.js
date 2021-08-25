@@ -55,7 +55,7 @@ app.post('/games', (req,res) => {
 
 
 app.put('/games/:id', (req, res) => { // atualizando game pelo id usando o app.put
-    const id = req.params.id - 1; // id faz request usando o paramento id - 1 
+    const id = req.params.id; // id faz request usando o paramento id - 1 
     const game = req.body.game; // game recebe a requisição body do json game
     const gameAntigo = games[id];
     games[id] = game; // aqui a lista de games no id pego recebe a requisição do json com a atualização do novo game
