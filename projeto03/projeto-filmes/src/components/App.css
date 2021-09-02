@@ -189,32 +189,31 @@ div div div form button:hover{
 
 .Lista-filme ul li button{
   cursor: pointer;
-  background-image: linear-gradient(to right, #322a57 0%, #928DAB  51%, #1F1C2C  100%);
-  margin: 6px;
-  padding: 14px 40px;
+  background-image: linear-gradient(to right, #a5050a 0%, #061161  51%, #f3afb1  100%);
+  margin: 10px;
+  padding: 15px 45px;
   text-align: center;
   text-transform: uppercase;
-  transition: 0.3s;
+  transition: 0.5s;
   background-size: 200% auto;
   color: white;            
   box-shadow: 0 0 20px #eee;
   border-radius: 10px;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  
 }
 
-.Lista-filme ul li button:hover{
-  transform:scale(1,1.1);
+.Lista-filme ul li button:hover {
   background-position: right center; /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
 }
+         
+  
 
 
-
-
-
+.Lista-filme ul li button:hover{
+  background-position: right center; /* change the direction of the change here */
+  color: #fff;
+  text-decoration: none;
+}
 
 
