@@ -92,7 +92,7 @@ div div div form button{
   transition: 0.3s;
   background-size: 200% auto;
   color: white;            
-  box-shadow: 0 0 20px #eee;
+  box-shadow: 0 0 20px rgb(15, 15, 15);
   border-radius: 10px;
   align-items: center;
   justify-content: center;
@@ -100,7 +100,7 @@ div div div form button{
 
 }
 div div div form button:hover{
-  transform:scale(1,1.1);
+  transform:scale(1,1.01);
   background-position: right center; /* change the direction of the change here */
   color: #fff;
   text-decoration: none;
@@ -170,13 +170,6 @@ div div div form button:hover{
   transform:scale(1.03,1.03);
   
 }
-
-/* .container .form form .sinopse{
-
-
-
-}
-   */
 .Lista-filme ul{
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -189,7 +182,7 @@ div div div form button:hover{
 
 .Lista-filme ul li button{
   cursor: pointer;
-  background-image: linear-gradient(to right, #a5050a 0%, #061161  51%, #f3afb1  100%);
+  background-image: linear-gradient(to right, #2b0488 0%, #061161  51%, #b0cfec  100%);
   margin: 10px;
   padding: 15px 45px;
   text-align: center;
@@ -197,7 +190,7 @@ div div div form button:hover{
   transition: 0.5s;
   background-size: 200% auto;
   color: white;            
-  box-shadow: 0 0 20px #eee;
+  box-shadow: 0 0 20px rgb(43, 42, 42);
   border-radius: 10px;
 }
 

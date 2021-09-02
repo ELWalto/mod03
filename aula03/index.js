@@ -1,47 +1,25 @@
+// comandos de inicialização e instalação de todas as dependencias
+// npm init -y
+// npm i express
+// npm i -D nodemon
+// npm i mongoose@5.13.8
 const express = require("express");
+const Conn = require("./models/conn/conn");
 const app = express();
 
-const port = 3001;
 
 app.use(express.json()); // Falar para as requisições do express que estamos utilizando json
 
-const filmes = [
-  {
-    id: 1,
-    nome: "Capitão America o primeiro vingador",
-    imagemUrl:
-      "https://play-lh.googleusercontent.com/9LAzip_XWe8eVWEUGCnSJ4xf706RmYtSu5bZRAfvqbs2aW6YVlLbPF7UVTfMpJKQUioKGw",
-  },
-  {
-    id: 2,
-    nome: "Capitã Marvel",
-    imagemUrl:
-      "https://br.web.img2.acsta.net/pictures/19/02/04/18/35/1468867.jpg",
-  },
-  {
-    id: 3,
-    nome: "O incrivel Hulk",
-    imagemUrl:
-      "https://br.web.img2.acsta.net/c_310_420/pictures/210/485/21048566_20131010182211313.jpg",
-  },
-  {
-    id: 4,
-    nome: "Homem de ferro",
-    imagemUrl:
-      "https://images-na.ssl-images-amazon.com/images/I/81vTHovrz%2BL._AC_SY606_.jpg",
-  },
-  {
-    id: 5,
-    nome: "Homem de ferro 2",
-    imagemUrl:
-      "https://media.fstatic.com/SFp4c8GT3GTGYok7_526qDSHTns=/290x478/smart/media/movies/covers/2018/09/66432b37ed80464274a58239b695007f95c79155.jpg",
-  },
-];
+const Connection = require('./models/conn/conn')
 
-app.get("/", (req, res) => {
-  // Rota que retorna apenas hello world
-  res.send("Hello, World!");
-}); // Endpoint principal
+Conn("localhost",27017,"filmes");
+
+const port = 3001;
+
+const filme = require("./routers/filmes.routes")
+app.use("/filmes",filme);
+
+
 
 // Funções de validação///
 const getFilmesValidos = () => filmes.filter(Boolean); // filter para "excluir os ids invalidos no get "Null, undefined, False"
@@ -164,7 +142,7 @@ app.delete("/filmes/:id", (req, res) => {
   //   }
 });
 
-app.listen(port, function () {
+app.listen(port, ()=> {
   // Listen serve para indicar onde as conexões estão sendo feitas
-  console.log(`App rodando na porta http://localhost:${port}/`);
+  console.info(`App rodando em http://localhost:${port}/`);
 });
