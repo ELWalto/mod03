@@ -45,17 +45,12 @@ export  default function TituloFilmes() {
         sinopse:"Em Homem-Aranha: Sem Volta para Casa, Peter Parker (Tom Holland) precisará lidar com as consequências da sua identidade como aracnídeo ter sido revelada pela reportagem do Clarim Diário. Incapaz de separar sua vida normal das aventuras de ser um super-herói, Parker pede ao Doutor Estranho (Benedict Cumberbatch) para que todos esqueçam sua verdeira identidade. Entretanto, o feitiço não sai como planejado e a situação torna-se ainda mais perigosa, forçando-o a descobrir o que realmente significa ser o Homem-Aranha."
       },
     ]);
-
-    // inicializa a declacao do estado dos inputs juntamente com suas funcoes de set (atualizacao) do estado.
+    
     const [nomeFilme, setNomeFilme] = useState("");
     const [imagemUrlFilme, setImagemUrlFilme] = useState("");
     const [sinopseFilme, setSinopseFilme] = useState("");
     const[editando, setEditando] = useState(false);
     const[indiceEditando,setindiceEditando] = useState(null);
-    
-    
-      
-  
     
     
     useEffect (()=>{
@@ -115,19 +110,9 @@ export  default function TituloFilmes() {
     const handleDelete = (indice) =>{
       setFilmes (filmes.filter((filme,indiceFilme) => indice !== indiceFilme))
     };
-    // método chamado no evento submit do formulario com o intuito de conter a regra para a adicao do filme
-    // nesse caso usamos evento.prevent default para evitar o comportamento padrao do subimit
-    // que seria recarregar a pagina quando clicar no botao e enviar o submit.
-    
+
     return (
-      // No input adicionamos um evento on change que é disparado a cada mudanca do formulario
-      // ou seja para cada tecla que digitar no formulario envia a determinada funcao
-      // no caso abaixo estamos pedindo para o on change chamar a funcao que atualiza o estado 'set'
-      // e atribuir o valor do value do input no seu estado
-      // já que o valor do value é o valor que o usuario digitou no input
-      // precisamos atribuir a nossa variavel do estado no value para alem de refletir no input o que digitamos
-      // atualizar tambem o valor do value no input.
-      <div className="container">
+        <div className="container">
         <div className="titulo">
           <h1> Filmes Marvel</h1>
         </div>
@@ -163,11 +148,11 @@ export  default function TituloFilmes() {
                 <h3>{f.nome}</h3>
                 <img src={f.imagemUrl} alt={f.nome} />
                 <p>{f.sinopse}</p>
-                <button type='button' onClick={() => handleDelete(indice)} > Excluir </button>
-                <button type='button' onClick={()=>{
+                <button type='button'  onClick={() => handleDelete(indice)} > Excluir </button>
+                <a href='.titulo'><button type='button' onClick={()=>{
                   setEditando(true);
-                  setindiceEditando(indice);
-                }}> Editar </button>
+                  setindiceEditando(indice)
+                }}> Editar </button></a>
               </li>
             ))}
           </ul>
